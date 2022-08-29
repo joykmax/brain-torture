@@ -8,14 +8,15 @@ public class DesktopApp extends JFrame {
     public DesktopApp(String sayIt, ChartData[] chartData) {
         super("Brain Torture");
         setLayout(new FlowLayout());
-        add(new JLabel(sayIt));
-        add(new JLabel(" Just do it and die."));
+        JLabel tLabel = new JLabel(sayIt + " Just do it and die.");
+        tLabel.setFont(new Font("Verdana", Font.BOLD, 16));
+        add(tLabel);
         ImageIcon icon = new ImageIcon(PieChart.createChart(chartData));
         JLabel pLabel = new JLabel();
         pLabel.setIcon(icon);
         add(pLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(300,460);
+        setSize(480,840);
         setLocationRelativeTo(null);
     }
 
